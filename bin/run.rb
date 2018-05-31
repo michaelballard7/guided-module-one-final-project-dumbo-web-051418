@@ -1,6 +1,5 @@
 require_relative '../config/environment'
 
-
 puts Car.all
 
 new_cli = CLI.new
