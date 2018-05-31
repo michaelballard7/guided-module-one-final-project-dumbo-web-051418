@@ -6,7 +6,7 @@ brand = ["chevy", "toyota","lexus","mclaren","tesla","porshce","honda","Range Ro
 
 10.times do |index|
   # Car.create(brand: Faker::Vehicle.manufacturer)
-  Car.create(brand: brand.sample, color: Faker::)
+  Car.create(brand: brand.sample)
 
 end
 
