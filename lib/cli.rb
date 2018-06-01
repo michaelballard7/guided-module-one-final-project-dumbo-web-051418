@@ -5,11 +5,37 @@ class CLI
   @@color = []
 
   def greet
+    banner = <<-eof
+
+                       888888        d8888 888b     d888
+                         "88b       d88888 8888b   d8888
+                          888      d88P888 88888b.d88888
+                          888     d88P 888 888Y88888P888
+                          888    d88P  888 888 Y888P 888
+                          888   d88P   888 888  Y8P  888
+                          88P  d8888888888 888   "   888
+                          888 d88P     888 888       888
+                        .d88P
+                      .d88P"
+                     888P"
+8888888b.                    888                           888      d8b
+888  "Y88b                   888                           888      Y8P
+888    888                   888                           888
+888    888  .d88b.   8888b.  888  .d88b.  888d888 .d8888b  88888b.  888 88888b.
+888    888 d8P  Y8b     "88b 888 d8P  Y8b 888P"   88K      888 "88b 888 888 "88b
+888    888 88888888 .d888888 888 88888888 888     "Y8888b. 888  888 888 888  888
+888  .d88P Y8b.     888  888 888 Y8b.     888          X88 888  888 888 888 d88P
+8888888P"   "Y8888  "Y888888 888  "Y8888  888      88888P' 888  888 888 88888P"
+                                                                        888
+                                                                        888
+                                                                        888
+eof
+puts banner
     puts 'Welcome to the JAM Dealership!'
   end
 
   def buy_car?
-    puts "do you want to buy a car? (yes/no)"
+    puts "Do you want to buy a car? (yes/no)"
     possible_buyer=gets.chomp
     if possible_buyer == "yes"
       puts "What is your name?"
@@ -53,9 +79,15 @@ class CLI
   end
 
   def make_a_purchase
-    puts "Sorry for the wait, your loan was approved!"
-    Purchase.new_purchase(@@name, @@color.first, @@interested_car.first)
-    puts "Here are your keys!"
+    puts "Are you ready to become a new car owner?"
+    answer = gets.chomp
+    if answer == "yes"
+      puts "Sorry for the wait, your loan was approved!"
+      Purchase.new_purchase(@@name, @@color.first, @@interested_car.first)
+      puts "Here are your keys!"
+    else
+      puts "GET OUT!!!!"
+    end
   end
 
 
